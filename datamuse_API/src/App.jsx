@@ -31,7 +31,6 @@ function App() {
     e.preventDefault()
 
     setData(input)
-    // fetchDatamuse(data)
   }
 
   const handleChange = (e) => {
