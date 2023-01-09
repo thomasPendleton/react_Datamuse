@@ -40,7 +40,7 @@ function App() {
   return (
     <div>
       <h1>Datamuse API</h1>
-
+     {/* add buttons for different api calls. */}
       <form action="submit" onSubmit={(e) => handleSubmit(e)}>
         <input type="text" value={input} onChange={(e) => handleChange(e)} />
         <button type="submit">Submit</button>
