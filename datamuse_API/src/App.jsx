@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import "./App.css"
 import WordContainer from "./WordContainer"
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
     if (data === null) return
     fetchDatamuse(data)
   }, [data])
-  
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setData(input)
@@ -42,7 +41,9 @@ function App() {
       <h1>Datamuse API</h1>
       {/* add buttons for different api calls. */}
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="word">Your word </label>
+        <label htmlFor="word">
+          Your word{" "}
+        </label>
         <input
           id="word"
           type="text"
@@ -52,7 +53,9 @@ function App() {
         <button type="submit">Submit</button>
       </form>
       {loading ? <h3>Loading...</h3> : null}
-      {apiData.length > 0 ? <WordContainer apiData={apiData} /> : null}
+      {apiData.length > 0 ? (
+        <WordContainer apiData={apiData} input={input} />
+      ) : null}
     </div>
   )
 }

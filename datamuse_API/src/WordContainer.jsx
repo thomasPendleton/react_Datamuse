@@ -1,17 +1,20 @@
 import React from "react"
 
-const WordContainer = ({ apiData }) => {
-  console.log(apiData);
+const WordContainer = ({ apiData, input }) => {
+  console.log(apiData, input)
   return (
-    <div className="word-container">
-      {apiData.map((word, idx) => {
-        return (
-          <h4 className="word" key={idx}>
-            {word.word}
-          </h4>
-        )
-      })}
-    </div>
+    <main>
+      <h2>{input}</h2>
+      <div className="word-container">
+        {apiData.map((word, idx) => {
+          return (
+            <h4 className="word" key={idx}>
+              {word.word}
+            </h4>
+          )
+        })}
+      </div>
+    </main>
   )
 }
 
