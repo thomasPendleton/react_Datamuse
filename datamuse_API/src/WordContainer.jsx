@@ -1,10 +1,16 @@
 import React from "react"
 
-const WordContainer = ({ apiData, input }) => {
-  console.log(apiData, input)
+const WordContainer = ({ apiData, searchedWord }) => {
+ 
+  if(apiData.length === 0 && searchedWord){
+    return <h2>No words found.</h2>
+  }
+
+
+  // Make the words clickable to link to input state.
   return (
     <main>
-      <h2>{input}</h2>
+      <h2>{searchedWord}</h2>
       <div className="word-container">
         {apiData.map((word, idx) => {
           return (
